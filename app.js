@@ -32,16 +32,7 @@ app.get('/', (req, res) => {
 app.post('/student', (req, res) => {
     const { imie, nazwisko, kierunek } = req.body;
     students.push({ imie, nazwisko, kierunek });
-    res.send(`
-      <html>
-        <head>
-          <title>Student</title>
-        </head>
-        <body>
-          <p>Hello, ${imie} ${nazwisko} on ${kierunek} studies!</p>
-        </body>
-      </html>
-    `);
+    res.send();
 });
 
 app.get('/student', (req, res) => {
