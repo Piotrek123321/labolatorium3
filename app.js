@@ -3,6 +3,13 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require('body-parser');
 
+
+app.use((req, res, next) => {
+    console.log(`Request ${req.method} on path ${req.url} ${new Date()}`);
+    next();
+  });
+
+  
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
